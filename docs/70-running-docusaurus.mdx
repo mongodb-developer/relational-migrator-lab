@@ -1,0 +1,24 @@
+# 👩‍💻 Running Docusaurus
+
+## Run in development
+
+Once you start your site, you should see changes as you save (no need to reload manually)
+
+```shell
+npm start
+```
+
+But sometimes we don't see our changes, or some error appears (esp when deleting folder with docs in the [docs folder](structure-site/docs-folder))
+
+To fix this, stop docusaurus and restart it `¯\_(ツ)_/¯`
+
+## Search
+
+The [Offline / Local plugin](https://github.com/cmfcmf/docusaurus-search-local) is installed to provide search. It only works on production builds, won't work while we're running the development build.
+
+To test the search plugin locally you need to generate a production build, then serve it:
+
+```shell
+npm run docusaurus build
+npm run docusaurus serve
+```
