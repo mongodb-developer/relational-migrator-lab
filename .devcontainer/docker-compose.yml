@@ -1,6 +1,7 @@
-version: "3.9"
+version: '3.8'
+
 services:
-  postgresql:
+  db:
     image: postgres:latest
     restart: unless-stopped
     volumes:
@@ -21,8 +22,8 @@ services:
       PGADMIN_DEFAULT_EMAIL: jonhdoe@gmail.com
       PGADMIN_DEFAULT_PASSWORD: StrongPassword
       PGADMIN_LISTEN_PORT: 8080
-        PGADMIN_CONFIG_PROXY_X_HOST_COUNT: 1
-        PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT: 1
+      PGADMIN_CONFIG_PROXY_X_HOST_COUNT: 1
+      PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT: 1
     ports:
       - "8080:8080"
 
