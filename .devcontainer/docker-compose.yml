@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  db:
+  postgresql:
     image: postgres:latest
     restart: unless-stopped
     volumes:
@@ -10,17 +10,21 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: postgres
+    network_mode: service:pgadmin
+
+    # ports:
+    #   - "5432:5432"
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
   pgadmin:
-    image: dpage/pgadmin4:6.10
+    image: dpage/pgadmin4:8.3
     restart: unless-stopped
     volumes:
       - pgadmin-data:/var/lib/pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: jonhdoe@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: StrongPassword
+      PGADMIN_DEFAULT_EMAIL: sql@mongodb.com
+      PGADMIN_DEFAULT_PASSWORD: password
       PGADMIN_LISTEN_PORT: 8080
       PGADMIN_CONFIG_PROXY_X_HOST_COUNT: 1
       PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT: 1
