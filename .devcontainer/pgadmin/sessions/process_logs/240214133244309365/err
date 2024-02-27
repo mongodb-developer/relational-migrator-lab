@@ -1,4 +1,0 @@
-240214133244550968,ERROR:  invalid input syntax for type integer: "name"
-
-240214133244552372,CONTEXT:  COPY authors, line 1, column id: "name"
-
