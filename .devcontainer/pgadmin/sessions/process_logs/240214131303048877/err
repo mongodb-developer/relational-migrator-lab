@@ -1,0 +1,4 @@
+240214131303366322,ERROR:  unterminated CSV quoted field
+
+240214131303372119,CONTEXT:  COPY authors, line 6252: "Robin Jones Gunn,robinjonesgunn,"Robin Jones Gunn is the best-selling, award-winning Christian autho..."
+

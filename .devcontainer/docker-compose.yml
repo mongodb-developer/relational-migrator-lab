@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  postgresql:
+    image: postgres:14
+    environment:
+      # - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=library
+    ports:
+      - "5432:5432"
+    healthcheck: # we use this in pgadmin to wait for PostgreSQL to start
+      test: su -c 'pg_isready' postgres
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 2s
+   # web interface to admin Postgres
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    ports:
+      - 8080:80
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    environment: # add connection to postgresql
+      - PGADMIN_DEFAULT_EMAIL=sql@mongodb.com
+      - PGADMIN_DEFAULT_PASSWORD=password
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin

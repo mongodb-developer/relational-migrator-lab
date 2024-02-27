@@ -1,0 +1,4 @@
+240214130537751978,ERROR:  extra data after last expected column
+
+240214130537753115,CONTEXT:  COPY authors, line 2: "64cc2db4830ba29148da4c3b,Richard Bruce Wright,richardbrucewright,"
+

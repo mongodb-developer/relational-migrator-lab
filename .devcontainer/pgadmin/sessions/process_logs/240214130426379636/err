@@ -1,0 +1,6 @@
+240214130426724116,ERROR:  syntax error at or near "OIDS"
+
+240214130426726393,LINE 1: ...s ( id, name, "sanitizedName" , bio ) FROM STDIN  OIDS  DELI...
+
+240214130426727789,                                                             ^
+

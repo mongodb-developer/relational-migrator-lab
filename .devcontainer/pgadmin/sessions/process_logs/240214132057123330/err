@@ -1,0 +1,278 @@
+240214132057495170,pg_dump: last built-in OID is 16383
+
+240214132057505899,pg_dump: reading extensions
+
+240214132057507201,pg_dump: identifying extension members
+
+240214132057508393,pg_dump: reading schemas
+
+240214132057511631,pg_dump: reading user-defined tables
+
+240214132057541789,pg_dump: reading user-defined functions
+
+240214132057547466,pg_dump: reading user-defined types
+
+240214132057561228,pg_dump: reading procedural languages
+
+240214132057562538,pg_dump: reading user-defined aggregate functions
+
+240214132057563764,pg_dump: reading user-defined operators
+
+240214132057568163,pg_dump: reading user-defined access methods
+
+240214132057569333,pg_dump: reading user-defined operator classes
+
+240214132057570521,pg_dump: reading user-defined operator families
+
+240214132057571664,pg_dump: reading user-defined text search parsers
+
+240214132057572826,pg_dump: reading user-defined text search templates
+
+240214132057573993,pg_dump: reading user-defined text search dictionaries
+
+240214132057575084,pg_dump: reading user-defined text search configurations
+
+240214132057576244,pg_dump: reading user-defined foreign-data wrappers
+
+240214132057577257,pg_dump: reading user-defined foreign servers
+
+240214132057578275,pg_dump: reading default privileges
+
+240214132057579643,pg_dump: reading user-defined collations
+
+240214132057580967,pg_dump: reading user-defined conversions
+
+240214132057582138,pg_dump: reading type casts
+
+240214132057583319,pg_dump: reading transforms
+
+240214132057584533,pg_dump: reading table inheritance information
+
+240214132057585704,pg_dump: reading event triggers
+
+240214132057586797,pg_dump: finding extension tables
+
+240214132057587922,pg_dump: finding inheritance relationships
+
+240214132057589070,pg_dump: reading column info for interesting tables
+
+240214132057590200,pg_dump: finding the columns and types of table "public.authors"
+
+240214132057591586,pg_dump: finding the columns and types of table "public.aliases"
+
+240214132057592567,pg_dump: finding the columns and types of table "public.users"
+
+240214132057593497,pg_dump: finding the columns and types of table "public.books"
+
+240214132057594370,pg_dump: finding the columns and types of table "public.book_reviews"
+
+240214132057595343,pg_dump: finding the columns and types of table "public.book_attributes"
+
+240214132057596221,pg_dump: finding the columns and types of table "public.books_authors"
+
+240214132057597116,pg_dump: finding the columns and types of table "public.genre"
+
+240214132057598037,pg_dump: finding the columns and types of table "public.issue_details"
+
+240214132057598885,pg_dump: flagging inherited columns in subtables
+
+240214132057599921,pg_dump: reading partitioning data
+
+240214132057600954,pg_dump: reading indexes
+
+240214132057601802,pg_dump: reading indexes for table "public.authors"
+
+240214132057602728,pg_dump: reading indexes for table "public.aliases"
+
+240214132057603848,pg_dump: reading indexes for table "public.users"
+
+240214132057604804,pg_dump: reading indexes for table "public.books"
+
+240214132057605659,pg_dump: reading indexes for table "public.book_reviews"
+
+240214132057606591,pg_dump: reading indexes for table "public.book_attributes"
+
+240214132057607598,pg_dump: reading indexes for table "public.books_authors"
+
+240214132057608666,pg_dump: reading indexes for table "public.genre"
+
+240214132057609628,pg_dump: reading indexes for table "public.issue_details"
+
+240214132057610546,pg_dump: flagging indexes in partitioned tables
+
+240214132057611453,pg_dump: reading extended statistics
+
+240214132057612423,pg_dump: reading constraints
+
+240214132057613673,pg_dump: reading foreign key constraints for table "public.authors"
+
+240214132057614748,pg_dump: reading foreign key constraints for table "public.aliases"
+
+240214132057615629,pg_dump: reading foreign key constraints for table "public.users"
+
+240214132057616519,pg_dump: reading foreign key constraints for table "public.books"
+
+240214132057617391,pg_dump: reading foreign key constraints for table "public.book_reviews"
+
+240214132057618265,pg_dump: reading foreign key constraints for table "public.book_attributes"
+
+240214132057619262,pg_dump: reading foreign key constraints for table "public.books_authors"
+
+240214132057620152,pg_dump: reading foreign key constraints for table "public.genre"
+
+240214132057620986,pg_dump: reading foreign key constraints for table "public.issue_details"
+
+240214132057621828,pg_dump: reading triggers
+
+240214132057622679,pg_dump: reading triggers for table "public.authors"
+
+240214132057623620,pg_dump: reading triggers for table "public.aliases"
+
+240214132057624814,pg_dump: reading triggers for table "public.users"
+
+240214132057625807,pg_dump: reading triggers for table "public.books"
+
+240214132057626758,pg_dump: reading triggers for table "public.book_reviews"
+
+240214132057627542,pg_dump: reading triggers for table "public.book_attributes"
+
+240214132057628305,pg_dump: reading triggers for table "public.books_authors"
+
+240214132057629164,pg_dump: reading triggers for table "public.genre"
+
+240214132057630120,pg_dump: reading triggers for table "public.issue_details"
+
+240214132057631076,pg_dump: reading rewrite rules
+
+240214132057632030,pg_dump: reading policies
+
+240214132057633055,pg_dump: reading row-level security policies
+
+240214132057634080,pg_dump: reading publications
+
+240214132057635052,pg_dump: reading publication membership
+
+240214132057636136,pg_dump: reading subscriptions
+
+240214132057637068,pg_dump: reading dependency data
+
+240214132057638000,pg_dump: saving encoding = UTF8
+
+240214132057639008,pg_dump: saving standard_conforming_strings = on
+
+240214132057640015,pg_dump: saving search_path = 
+
+240214132057640999,pg_dump: saving database definition
+
+240214132057641925,pg_dump: dropping DATABASE library
+
+240214132057642925,pg_dump: creating DATABASE "library"
+
+240214132057644169,pg_dump: connecting to new database "library"
+
+240214132057645578,pg_dump: creating TABLE "public.aliases"
+
+240214132057646695,pg_dump: creating COMMENT "public.COLUMN aliases.author_id"
+
+240214132057647723,pg_dump: creating SEQUENCE "public.aliases_id_seq"
+
+240214132057648694,pg_dump: creating TABLE "public.authors"
+
+240214132057649563,pg_dump: creating SEQUENCE "public.authors_id_seq"
+
+240214132057650413,pg_dump: creating TABLE "public.book_attributes"
+
+240214132057651256,pg_dump: creating SEQUENCE "public.book_attributes_id_seq"
+
+240214132057652076,pg_dump: creating TABLE "public.book_reviews"
+
+240214132057652883,pg_dump: creating SEQUENCE "public.book_reviews_id_seq"
+
+240214132057653748,pg_dump: creating TABLE "public.books"
+
+240214132057654669,pg_dump: creating TABLE "public.books_authors"
+
+240214132057655510,pg_dump: creating COMMENT "public.TABLE books_authors"
+
+240214132057656316,pg_dump: creating SEQUENCE "public.books_id_seq"
+
+240214132057657194,pg_dump: creating TABLE "public.genre"
+
+240214132057658374,pg_dump: creating SEQUENCE "public.genre_id_seq"
+
+240214132057659259,pg_dump: creating TABLE "public.issue_details"
+
+240214132057660217,pg_dump: creating SEQUENCE "public.issue_details_id_seq"
+
+240214132057661135,pg_dump: creating TABLE "public.users"
+
+240214132057661979,pg_dump: creating SEQUENCE "public.users_id_seq"
+
+240214132057662854,pg_dump: processing data for table "public.aliases"
+
+240214132057663741,pg_dump: processing data for table "public.authors"
+
+240214132057664623,pg_dump: processing data for table "public.book_attributes"
+
+240214132057665473,pg_dump: processing data for table "public.book_reviews"
+
+240214132057666355,pg_dump: processing data for table "public.books"
+
+240214132057667183,pg_dump: processing data for table "public.books_authors"
+
+240214132057668032,pg_dump: processing data for table "public.genre"
+
+240214132057668874,pg_dump: processing data for table "public.issue_details"
+
+240214132057669771,pg_dump: processing data for table "public.users"
+
+240214132057670632,pg_dump: executing SEQUENCE SET aliases_id_seq
+
+240214132057671532,pg_dump: executing SEQUENCE SET authors_id_seq
+
+240214132057672383,pg_dump: executing SEQUENCE SET book_attributes_id_seq
+
+240214132057673297,pg_dump: executing SEQUENCE SET book_reviews_id_seq
+
+240214132057674225,pg_dump: executing SEQUENCE SET books_id_seq
+
+240214132057675235,pg_dump: executing SEQUENCE SET genre_id_seq
+
+240214132057676097,pg_dump: executing SEQUENCE SET issue_details_id_seq
+
+240214132057676894,pg_dump: executing SEQUENCE SET users_id_seq
+
+240214132057677734,pg_dump: creating CONSTRAINT "public.aliases aliases_pkey"
+
+240214132057678606,pg_dump: creating CONSTRAINT "public.authors authors_pkey"
+
+240214132057679510,pg_dump: creating CONSTRAINT "public.book_attributes book_attributes_pkey"
+
+240214132057680528,pg_dump: creating CONSTRAINT "public.book_reviews book_reviews_pkey"
+
+240214132057681450,pg_dump: creating CONSTRAINT "public.books_authors books_authors_pkey"
+
+240214132057682385,pg_dump: creating CONSTRAINT "public.books books_pkey"
+
+240214132057683328,pg_dump: creating CONSTRAINT "public.genre genre_pkey"
+
+240214132057684269,pg_dump: creating CONSTRAINT "public.issue_details issue_details_pkey"
+
+240214132057685092,pg_dump: creating CONSTRAINT "public.users users_pkey"
+
+240214132057685925,pg_dump: creating FK CONSTRAINT "public.aliases aliases_author_id_fkey"
+
+240214132057686814,pg_dump: creating FK CONSTRAINT "public.book_attributes book_attributes_book_id_fkey"
+
+240214132057687690,pg_dump: creating FK CONSTRAINT "public.book_reviews book_reviews_book_id_fkey"
+
+240214132057688522,pg_dump: creating FK CONSTRAINT "public.books_authors books_authors_author_id_fkey"
+
+240214132057689559,pg_dump: creating FK CONSTRAINT "public.books_authors books_authors_book_id_fkey"
+
+240214132057690678,pg_dump: creating FK CONSTRAINT "public.genre genre_book_id_fkey"
+
+240214132057691711,pg_dump: creating FK CONSTRAINT "public.issue_details issue_details_book_id_fkey"
+
+240214132057692482,pg_dump: creating FK CONSTRAINT "public.issue_details issue_details_user_id_fkey"
+

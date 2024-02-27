@@ -1,0 +1,4 @@
+240214130447381435,ERROR:  invalid input syntax for type integer: "64cc2db4830ba29148da4c3b"
+
+240214130447383466,CONTEXT:  COPY authors, line 2, column id: "64cc2db4830ba29148da4c3b"
+
