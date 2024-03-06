@@ -4,7 +4,7 @@
 // Change here to customise config
 
 // Name of the Github Repo, it's also teh baseUrl
-const workshopName = 'relational-migartor-lab';
+const workshopName = 'relational-migrator-lab';
 // Change this if hosting outside mongodb-developer
 const organizationName = "mongodb-developer";
 
@@ -154,7 +154,7 @@ const config = {
           height: "100%",
         },
         items: [
-         
+
         ],
       },
       footer: {
