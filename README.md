@@ -2,7 +2,7 @@
 
 This is the Relational Migrator Lab used during Developer Days that covers using the Relational Migrator to import a PostgreSQL Database into MongoDB. 
 
-You can access the online version on the Search Lab [here](https://mongodb-developer.github.io/relational-migrator-lab/)
+You can access the online version on the Relational Migrator Lab [here](https://mongodb-developer.github.io/relational-migrator-lab/)
 
 ## Contributing
 
