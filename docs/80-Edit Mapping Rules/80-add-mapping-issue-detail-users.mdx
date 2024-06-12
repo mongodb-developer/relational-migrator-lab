@@ -1,0 +1,16 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# Add mapping to issueDetails collection (from users table)
+
+Now we want to store more details from each user into the collection tracking library loans.
+
+- On the MongoDB diagram view, click the `issueDetails` collection
+- On the relational mappings list on the right, click `+Add`
+- Select `Embedded documents`
+- Select `users` as Source table
+- Check the `id` and `name` fields and uncheck the rest
+- Click `Save and close` 
+
+
+<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/180-image-001.png" alt="Screenshot of the connect modal" />
+
