@@ -4,7 +4,7 @@ sidebar_position: 20
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# 🦖 Prerequisites 
+# 👐 Prerequisites 
 
 ## 1. PostgreSQL Database
 
@@ -19,7 +19,7 @@ connection URI and credentials.
 
 If you already have a PostgreSQL server set up, you can import the schema and data used in this lab. Download the file 
 [1-library-schema-and-data.sql](https://github.com/mongodb-developer/relational-migrator-lab/docker/sample-postgres-library/init/1-library-schema-and-data.sql)
-file and load it using psql or pgAdmin.
+file and load it using psql or [pgAdmin](https://www.pgadmin.org/download/).
 
 ### Option 3: Run a PostgreSQL container using Docker
 
@@ -48,9 +48,11 @@ few options to set up this database.
 The easiest way to run MongoDB is to use MongoDB Atlas, our cloud-hosted database offering.
 You can set a MongoDB Atlas account and a free forever M0 Cluster.
 
-To get yours, follow the instructions on the [Intro Lab](https://mongodb-developer.github.io/intro-lab/docs/mongodb-atlas/what-is-mongodb)
+To get yours, follow the instructions on the [Intro Lab:](https://mongodb-developer.github.io/intro-lab/docs/mongodb-atlas/what-is-mongodb)
+- [Create your Account](https://mongodb-developer.github.io/intro-lab/docs/mongodb-atlas/create-account)
+- [Deploy a Database Cluster](https://mongodb-developer.github.io/intro-lab/docs/mongodb-atlas/create-cluster)
 
-Be sure to open up the firewall to your local computer, and configure a database user with the readWriteAnyDatabase role. 
+Be sure to [open up the cluster to allow connections from your local computer](https://www.mongodb.com/docs/guides/atlas/network-connections/#overview), and configure a database user with the readWriteAnyDatabase role. 
 
 ### Option 2: Use existing cluster
 
