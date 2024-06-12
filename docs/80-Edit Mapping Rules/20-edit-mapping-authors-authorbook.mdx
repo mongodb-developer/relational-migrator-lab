@@ -1,0 +1,16 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# Edit mapping to authors collection (from author_book table)
+
+We want to modify the authors collection to include an array of IDs representing their books. 
+
+- On the MongoDB diagram view, click the `authors` collection
+- On the relational mappings list on the right, click on the edit icon of `author_book`
+- Edit the field name from `authorBooks` to just `books`
+- In the mapping rule's advanced settings, Check `create array of primitive values`
+- In the list of fields, uncheck `authorId`, leaving `bookId` checked
+- Click `Save and close`
+
+
+<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/120-image-001.png" alt="Screenshot of the connect modal" />
+

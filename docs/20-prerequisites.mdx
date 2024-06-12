@@ -6,18 +6,71 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # 🦖 Prerequisites 
 
+## 1. PostgreSQL Database
 
+In this lab you will be migrating data from a PostgreSQL relational database. You have a few options to set up this database.
 
-## MongoDB Atlas
+### Option 1: Use pre-configured database
 
-As we'll be importing data from a Relational Database into MongoDB Atlas, you'll need a MongoDB Atlas account and a free forever M0 Cluster.
+If you are participating in an instructor-led lab, they may have already set up this database for you. Ask your instructor for the 
+connection URI and credentials.
+
+### Option 2: Load the schema and data into your own PostgreSQL server
+
+If you already have a PostgreSQL server set up, you can import the schema and data used in this lab. Download the file 
+[1-library-schema-and-data.sql](https://github.com/mongodb-developer/relational-migrator-lab/docker/sample-postgres-library/init/1-library-schema-and-data.sql)
+file and load it using psql or pgAdmin.
+
+### Option 3: Run a PostgreSQL container using Docker
+
+If you don't have an existing PostgreSQL server but have Docker installed, you can easily load a container pre-configured with 
+PostgreSQL and the sample database:
+
+1. Clone or download the code from this lab's [Github repo](https://github.com/mongodb-developer/relational-migrator-lab).
+2. Open a terminal window and navigate to the repo root
+3. Build the Docker image by running the command: 
+```
+docker build -f ./docker/sample-postgres-library/Dockerfile -t sample-postgres-library .
+```
+4. Start the Docker container by running the command:
+```
+docker run -p 5432:5432 sample-postgres-library
+```
+The PostgreSQL server can be accessed at localhost:5432 with a username of `postgres` and a password of `postgres`.
+
+## 2. MongoDB Database
+
+As we'll be importing data from a Relational Database into MongoDB, you'll need to have a MongoDB database. You have a 
+few options to set up this database.
+
+### Option 1: New MongoDB Atlas cluster
+
+The easiest way to run MongoDB is to use MongoDB Atlas, our cloud-hosted database offering.
+You can set a MongoDB Atlas account and a free forever M0 Cluster.
 
 To get yours, follow the instructions on the [Intro Lab](https://mongodb-developer.github.io/intro-lab/docs/mongodb-atlas/what-is-mongodb)
 
-:::tip
-You can also import into your own on-premises, or container hosted cluster of MongoDB, including MongoDB Community Edition.
-:::
+Be sure to open up the firewall to your local computer, and configure a database user with the readWriteAnyDatabase role. 
 
-## Download and install MongoDB Relational Migrator
+### Option 2: Use existing cluster
 
-Now you will need to go to the [MongoDB Relational Migrator downloads page](https://www.mongodb.com/try/download/relational-migrator), select your OS, download and install it. Once installed, run it and it will be running on a browser.
+If you have an existing MongoDB Atlas, Enterprise or Community cluster, you can use it as the migration target. Make sure you
+know the URI for the cluster, and have a database user with the readWriteAnyDatabase role. 
+
+### Option 3: Run a MongoDB container using Docker
+
+
+If you don't have an existing PostgreSQL server but have Docker installed, you can easily load a container pre-configured with 
+MongoDB by running the following command:
+
+```
+docker run -p 27017:27017 mongo
+```
+
+This will launch an empty MongoDB community cluster on localhost:27017, suitable to use for this lab. 
+You can connect with no username or password. Since this command does not use Docker volumes, any data will be lost when the container is stopped.
+## 3. Download and install MongoDB Relational Migrator
+
+
+Now you will need to go to the [MongoDB Relational Migrator downloads page](https://www.mongodb.com/try/download/relational-migrator), select your OS, download and install it. Once installed, 
+run it and it will be running on a browser at http://127.0.0.1:8080.

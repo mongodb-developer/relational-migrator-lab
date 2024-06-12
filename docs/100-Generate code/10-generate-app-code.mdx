@@ -1,0 +1,17 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# Generate app code
+
+Relational Migrator allows you to generate application code in a variety of languges, dervied from your MongoDB schema definition.
+While this code is not production-ready, it can save developers significant time compared to creating entity classes by hand. 
+
+- At the top, switch to Code Generation tab
+- Under Language, select `C#`
+- Under Template, select `Persistence Layer`
+- Click each of the collections in the list. Notice the tabs containing entity classes and CRUD helpers for each collection or embedded object.
+- Under Language, select `JSON'
+- Under Template, select `Sample Documents`. Notice how you can view examples of how data in each collection will be structured.
+- Under Template, select `JSON Schema (MongoDB)`. Notice how you can view and download JSON Schema validators which could be used to enforce schema compliance.
+
+<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/generate-app-code.png" alt="Screenshot of the connect modal" />
+

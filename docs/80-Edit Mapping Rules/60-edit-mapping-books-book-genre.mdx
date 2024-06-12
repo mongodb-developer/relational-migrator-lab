@@ -1,0 +1,17 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# Edit mapping to books collection (from book_genre table)
+
+We want to modify the MongoDB schema so that each book's genres are represented as an array of strings. 
+
+- On the MongoDB diagram view, click the `books` collection
+- On the relational mappings list on the right, click on the edit icon of `book_genre` embedded array
+- Change the field name from `bookGenres` to `genres`
+- Uncheck `bookId`
+- In the advanced settings, check `create array of primitive values`
+- Click `Save and close`
+
+
+
+<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/160-image-001.png" alt="Screenshot of the connect modal" />
+

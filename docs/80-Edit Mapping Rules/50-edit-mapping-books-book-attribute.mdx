@@ -1,0 +1,16 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# Edit mapping to books collection (from book_attribute table) 
+
+
+We want to clean up the book_attributes array in our MongoDB schema.
+
+- On the MongoDB diagram view, click the `books` collection
+- On the relational mappings list on the right, click on the edit icon of `book_attribute` embedded array mapping rule.
+- Change the Field name from `bookAttributes` to `attributes`
+- Uncheck `bookId`
+- Click `Save and close`
+
+
+<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/150-image-001.png" alt="Screenshot of the connect modal" />
+
