@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrelational_migrator_lab=self.webpackChunkrelational_migrator_lab||[]).push([[572],{2572:(a,l,r)=>{r.r(l)}}]);
