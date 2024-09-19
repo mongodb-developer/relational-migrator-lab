@@ -1,0 +1,25 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# 👐 Add mapping to books collection (from reviews table)
+
+We want to modify the MongoDB schema so that each book contains an array of its latest three reviews.
+This is actually an implementation of the [Subset Pattern](https://www.mongodb.com/blog/post/building-with-patterns-the-subset-pattern).
+
+In this step we will embed the book details into the empty array from the join table. 
+
+- On the MongoDB diagram view, click the `books` collection
+- On the relational mappings list on the right, click `+ Add`
+- Select `Embedded array`
+- Select `reviews` as Source table
+- In the advanced settings, check 'Add array conditions`
+- In `Sort by and order` option, select 'timestamp' and toggle the order to descending
+- Set `Limit number of rows` to `3`
+- Uncheck the `bookId` and leave the rest of the fields checked
+- Click `Save and close` 
+
+Limitations: 
+- Continuous Migration Mode will not support this transformation
+- You will not be able to enable Data Verification when you create the Migration Job.
+
+<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/150-image-002.png" alt="Screenshot of the connect modal" />
+
