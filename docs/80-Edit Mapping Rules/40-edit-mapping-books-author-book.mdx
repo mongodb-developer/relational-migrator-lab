@@ -1,6 +1,6 @@
 import Screenshot from "@site/src/components/Screenshot";
 
-# 👐 Edit mapping to books collection (from author_book table)
+# 👐 Remove unused ids from author details in books collection
 
 We want to modify the MongoDB schema so that each book contains an array of its authors.
 In this step we will remove the redundant ID fields from the join table. 
@@ -11,7 +11,7 @@ In this step we will remove the redundant ID fields from the join table.
 - In the list of fields, uncheck `authorId` and `bookId`, leaving all fields unchecked. 
 - Click `Save and close`
 
-
+What we have now is an implementation of the [Extended reference pattern](https://www.mongodb.com/blog/post/building-with-patterns-the-extended-reference-pattern)
 
 <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/140-image-001.png" alt="Screenshot of the connect modal" />
 

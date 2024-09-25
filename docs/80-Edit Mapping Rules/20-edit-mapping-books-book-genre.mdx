@@ -1,8 +1,8 @@
 import Screenshot from "@site/src/components/Screenshot";
 
-# 👐 Edit mapping to books collection (from book_genre table)
+# 👐 Add genres to books (not only genre ids)
 
-We want to modify the MongoDB schema so that each book's genres are represented as an array of strings. 
+We want to modify the MongoDB schema so that each book's genres are represented as an array of strings. We'll have data duplication, as genres will get copied on each book. This is a good strategy if the duplicated data does not change often.
 
 - On the MongoDB diagram view, click the `books` collection
 - On the relational mappings list on the right, click on the edit icon of `book_genre` embedded array
