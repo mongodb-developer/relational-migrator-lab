@@ -1,9 +1,9 @@
 import Screenshot from "@site/src/components/Screenshot";
 
-# 👐 Add mapping to books collection (from authors table)
+# 👐 Add authors details to the books collection
 
 We want to modify the MongoDB schema so that each book contains an array of its authors.
-In this step we will embed the book details into the empty array from the join table. 
+In this step we will embed the book details into the empty array from the join table (which right now only contains `authorId` and `bookId`)
 
 - On the MongoDB diagram view, click the `books` collection
 - On the relational mappings list on the right, click `+ Add`
@@ -12,6 +12,8 @@ In this step we will embed the book details into the empty array from the join t
 - In the advanced settings, check 'Merge fields into parent`
 - Check the `id` and `name` fields and uncheck the rest
 - Click `Save and close` 
+
+
 
 
 <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/130-image-001.png" alt="Screenshot of the connect modal" />

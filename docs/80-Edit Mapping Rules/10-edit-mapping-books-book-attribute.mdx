@@ -1,15 +1,34 @@
 import Screenshot from "@site/src/components/Screenshot";
 
-# 👐 Edit mapping to books collection (from book_attribute table) 
+# 👐 Clean book attributes up  
 
 
-We want to clean up the book_attributes array in our MongoDB schema.
+We want to clean up the book_attributes array in our MongoDB schema. We want an array of objects containing attributes, modelled a key value pairs. something like:
+
+```json
+{
+    "_id": 838383, // book id
+    "attributes": [
+        {
+            "key": "price",
+            "value": 11
+        },
+        {
+            "key": "pages",
+            "value": 236
+        },
+        // ...
+    ] 
+}
+```
 
 - On the MongoDB diagram view, click the `books` collection
 - On the relational mappings list on the right, click on the edit icon of `book_attribute` embedded array mapping rule.
 - Change the Field name from `bookAttributes` to `attributes`
-- Uncheck `bookId`
+- Uncheck `bookId`. We just want all the attributes, which are key/value pairs.
 - Click `Save and close`
+
+Here we've implemented the [Attribute Pattern](https://www.mongodb.com/developer/products/mongodb/attribute-pattern/) for MongoDB.
 
 
 <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/150-image-001.png" alt="Screenshot of the connect modal" />
