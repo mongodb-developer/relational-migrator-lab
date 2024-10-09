@@ -3,7 +3,7 @@ import Screenshot from "@site/src/components/Screenshot";
 # 👐 Add authors details to the books collection
 
 We want to modify the MongoDB schema so that each book contains an array of its authors.
-In this step we will embed the book details into the empty array from the join table (which right now only contains `authorId` and `bookId`)
+In this step we will embed the book details into the empty array created from the join table (which right now only contains `authorId` and `bookId`)
 
 - On the MongoDB diagram view, click the `books` collection
 - On the relational mappings list on the right, click `+ Add`
@@ -13,8 +13,9 @@ In this step we will embed the book details into the empty array from the join t
 - Check the `id` and `name` fields and uncheck the rest
 - Click `Save and close` 
 
-
-
+:::info
+This is a perfect example of the [Extended Reference Pattern](https://www.mongodb.com/blog/post/building-with-patterns-the-extended-reference-pattern). When we read a book, we have some of the author's data (`name` in this case) but we still have the author's id in case we need all the author's attributes (we can then do a join on read using `$lookup`)
+:::
 
 <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/130-image-001.png" alt="Screenshot of the connect modal" />
 
