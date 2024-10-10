@@ -11,6 +11,6 @@ The following screenshot shows the MongoDB schema we will be creating in this la
 <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/40-image-001.png" alt="Screenshot of the connect modal" />
 
 A few key points:
-- books will contain an array of authors with author id and name for fast retrieval. This is using the [Extended Reference Pattern](https://www.mongodb.com/blog/post/building-with-patterns-the-extended-reference-pattern) to reference a separate Collection (Authors) but having in books enough information aubout the author.
-- reviews are not included in the books collection as they can grow and become an [unbounded array](https://www.mongodb.com/developer/products/mongodb/schema-design-anti-pattern-massive-arrays/), an atipattern in Schema Design.
-- an author can have several aliases, we just store those strings in an array.
+- Books will contain an array of authors with author id and name for fast retrieval. This is using the [Extended Reference pattern](https://www.mongodb.com/blog/post/building-with-patterns-the-extended-reference-pattern) to reference a separate collection (Authors) but having in books enough information aubout the author.
+- Reviews are not included in the books collection as they can grow and become an [unbounded array](https://www.mongodb.com/developer/products/mongodb/schema-design-anti-pattern-massive-arrays/), an antipattern in schema design.
+- An author can have several aliases. We just store those strings in an array.
