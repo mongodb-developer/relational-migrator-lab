@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkrelational_migrator_lab=self.webpackChunkrelational_migrator_lab||[]).push([["990"],{4802:function(n,t,a){a.d(t,{Z:function(){return e}});let e=a(1336)},7936:function(){}}]);
