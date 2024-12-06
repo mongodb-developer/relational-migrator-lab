@@ -104,7 +104,7 @@ const config = {
   customFields: {
     startButtonTitle: `${startButtonTitle}`,
     featureList: featureList,
-    utmParams
+    utmParams,
   },
   presets: [
     [
@@ -161,7 +161,13 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["powershell", "swift", "kotlin"],
       },
+      mermaid: {
+        theme: { light: "neutral", dark: "forest" },
+      },
     }),
+  future: {
+    experimental_faster: true,
+  },
 };
 
 module.exports = config;
