@@ -6,7 +6,7 @@ You have already imported and converted your source queries, stored procedures o
 Relation Migrator allows you to go a step further, and verify the converted query by allowing you to compare results from the source query and converted query.
 
 ## Prerequisite
-1. In order for Relational Migrator to run converted queries you need to first [install and run Query Runner](https://www.mongodb.com/docs/relational-migrator/code-generation/query-converter/test-converted-queries/install-query-runner/).
+1. In order for Relational Migrator to run converted queries, you need to first [install and run Query Runner](https://www.mongodb.com/docs/relational-migrator/code-generation/query-converter/test-converted-queries/install-query-runner/).
 
 2. The MongoDB query will be executed on your actual MongoDB database, so you must have completed [migrating your data](https://mongodb-developer.github.io/relational-migrator-lab/docs/Migrate%20Data/migration).
 
@@ -29,7 +29,7 @@ Relation Migrator allows you to go a step further, and verify the converted quer
 
 1. Select the source query you want to test on the left pane. As an example, we will select the `get_books_by_genre` stored procedure.
 2. Convert the query to a MongoDB query if you have not done so, but note that the converted query may not always be correct.
-3. If it is a stored procedure, you will need to replace the placeholder parameter with a test value. 
+3. If it is a stored procedure, you will need to replace the placeholder parameter with a test value. In this example, we will replace it with `'Literature'`.
     <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/testing-queries-004.png" alt="Screenshot to show placeholder replacement" />
 4. Click **RUN SOURCE QUERY** and **RUN CONVERTED QUERY** to execute the queries and  compare the results.
     <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/testing-queries-005.png" alt="Screenshot to show result comparison" />
