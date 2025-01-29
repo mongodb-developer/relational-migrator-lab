@@ -1,0 +1,61 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# 🦸 Testing Converted Queries
+
+You have already imported and converted your source queries, stored procedures or views into MongoDB queries.
+Relation Migrator allows you to go a step further, and verify the converted query by allowing you to compare results from the source query and converted query.
+
+## Prerequisite
+1. In order for Relational Migrator to run converted queries, you need to first [install and run Query Runner](https://www.mongodb.com/docs/relational-migrator/code-generation/query-converter/test-converted-queries/install-query-runner/).
+
+2. The MongoDB query will be executed on your actual MongoDB database, so you must have completed [migrating your data](https://mongodb-developer.github.io/relational-migrator-lab/docs/Migrate%20Data/migration).
+
+2. If you source data resides in the `public` schema in your PostgreSQL database, you may skip this step. Otherwise, you will need to add your source data schema into PostgreSQL's search path in order for the queries execute properly.
+    
+    Go to **Manage Connections**:
+    <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/testing-queries-001.png" alt="Screenshot to manage connection" />
+    
+    Edit your **JDBC URI** to include the search path. For example, if your source schema is `library`, add `options=-c%20search_path%3Dlibrary` as a query parameter to your URI:
+    
+    <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/testing-queries-002.png" alt="Screenshot to add search path" />
+    
+    Click **Save** and you can use the browser's **back button** to navigate back to the Query Converter page. 
+
+3. After which, you may expand the test query panel to begin executing your source query or converted query.
+
+    <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/testing-queries-003.png" alt="Screenshot to expand query test panel" />
+
+## Executing queries for comparison
+
+1. Select the source query you want to test on the left pane. As an example, we will select the `get_books_by_genre` stored procedure.
+2. Convert the query to a MongoDB query if you have not done so, but note that the converted query may not always be correct.
+3. If it is a stored procedure, you will need to replace the placeholder parameter with a test value. In this example, we will replace it with `'Literature'`.
+    <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/testing-queries-004.png" alt="Screenshot to show placeholder replacement" />
+4. Click **RUN SOURCE QUERY** and **RUN CONVERTED QUERY** to execute the queries and  compare the results.
+    <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/testing-queries-005.png" alt="Screenshot to show result comparison" />
+5. If the query results are different, check your MongoDB query. In this example, your MongoDB query should look like:
+    ```js
+        async function get_books_by_genre(db, genre_param) {
+        const result = await db.collection('books').aggregate([
+            {
+                $match: {
+                    'genre': genre_param
+                }
+            },
+            {
+                $project: {
+                    title: 1
+                }
+            }
+        ]).toArray();
+            return result;
+        }
+    ```
+    Also check that any changes your made to your MongoDB query are saved.
+
+
+
+
+
+
+
