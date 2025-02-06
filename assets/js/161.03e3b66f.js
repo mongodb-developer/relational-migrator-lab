@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrelational_migrator_lab=self.webpackChunkrelational_migrator_lab||[]).push([["161"],{5845:function(e,r,a){a.d(r,{createArchitectureServices:function(){return t.i}});var t=a(8693);a(5318)}}]);
