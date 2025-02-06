@@ -168,6 +168,10 @@ const config = {
   future: {
     experimental_faster: true,
   },
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
 };
 
 module.exports = config;
