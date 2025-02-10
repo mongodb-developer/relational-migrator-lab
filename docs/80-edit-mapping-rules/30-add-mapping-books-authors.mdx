@@ -2,20 +2,47 @@ import Screenshot from "@site/src/components/Screenshot";
 
 # 👐 Add authors details to the books collection
 
-We want to modify the MongoDB schema so that each book contains an array of its authors.
-In this step we will embed the book details into the empty array created from the join table (which right now only contains `authorId` and `bookId`)
+## 👐 Add author name to the books collection
+
+We want to modify the MongoDB schema so that each book contains an array of its authors. Right now in the `authorBooks` mapping we're getting the `authorId` for the current book, but we want also the name of the author. So in this step we will embed the author name into array created from the mapping of the join table (which right now only contains `authorId` and `bookId`)
 
 - On the MongoDB diagram view, click the `books` collection
 - On the relational mappings list on the right, click `+ Add`
 - Select `Embedded documents`
 - Select `authors` as Source table
 - In the advanced settings, check 'Merge fields into parent`
-- Check the `id` and `name` fields and uncheck the rest
+- Check the `name` field and uncheck the rest
 - Click `Save and close` 
 
-:::info
-This is a perfect example of the [Extended Reference Pattern](https://www.mongodb.com/blog/post/building-with-patterns-the-extended-reference-pattern). When we read a book, we have some of the author's data (`name` in this case) but we still have the author's id in case we need all the author's attributes (we can then do a join on read using `$lookup`)
-:::
 
 <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/130-image-001.png" alt="Screenshot of the connect modal" />
 
+## 👐 Remove unneeded bookId from author details in books collection
+
+We want to modify the MongoDB schema so that each book contains an array of its authors.
+In this step we will remove the redundant ID fields from the join table. 
+
+- On the MongoDB diagram view, click the `books` collection.
+- On the relational mappings list on the right, click on the edit icon of `author_book`.
+- Edit the field name from `authorBooks` to just `authors`.
+- In the list of fields, uncheck `bookId`. 
+- Click `Save and close`.
+
+This results in our `authors` array looking like:
+
+```json
+    "authors": [
+        {
+            "authorId": 8282,
+            "name": "Cervantes"
+        },
+        ...
+    ]
+```
+
+<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/140-image-001.png" alt="Screenshot of the connect modal" />
+
+
+:::info
+This is a perfect example of the [Extended Reference Pattern](https://www.mongodb.com/blog/post/building-with-patterns-the-extended-reference-pattern). When we read a book, we have some of the author's data (`name` in this case) but we still have the author's id in case we need all the author's attributes (we can then do a join on read using [`$lookup`](https://www.mongodb.com/docs/manual/reference/operator/aggregation/lookup/))
+:::

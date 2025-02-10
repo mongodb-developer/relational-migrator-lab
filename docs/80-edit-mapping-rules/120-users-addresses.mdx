@@ -1,0 +1,30 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# 🦸 Clean Users address data
+
+:::info
+Extra activity! Do it if you have extra time or are following along at home. It won't be covered during the hands-on lab.
+:::
+
+The array that holds user addresses has a lot of unneeded data.
+
+- On the MongoDB diagram view, click on the `users` collection
+- Click on the edit edit icon of `userAddresses`
+- Change the field name from `userAddresses` to `addresses`.
+- Deselect `id`, `userId` and `cityId`.
+- Click `Save and close `
+- Click on the edit edit icon of `cities`, which is an embedded document inside the array `addresses`.
+- Deselect `id`.
+- Rename the `name` field into `cityName`.
+- In the advanced settings, check 'Merge fields into parent`.
+- Click `Save and close`.
+- On the relational mappings list on the right, click `+Add`.
+- Select `Embedded documents`.
+- Select `countries` as Source table.
+- In the advanced settings check `Merge fields into the parent`.
+- Only check `name` field, renaming the `name` field into `countryName`.
+- Click `Save and close`.
+
+
+![Screenshot of the users collection](/img/users.png)
+
