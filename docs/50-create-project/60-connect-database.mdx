@@ -2,7 +2,13 @@ import Screenshot from "@site/src/components/Screenshot";
 
 # 👐 Connect to the Database
 
+## Add a new connection
+
+We can store the credentials of our database so in the next session we can connect quickly. In this case, we'll create a new connection selecting "Add a new connection". 
+
 ## Select PostgreSQL as Database Type
+
+Then we'll select PostgreSQL as our source database.
 
 <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/60-image-000.png" alt="Selecting PostgreSQL as Database" />
 
@@ -10,11 +16,15 @@ import Screenshot from "@site/src/components/Screenshot";
 
 Enter the details for the PostgreSQL database you will be migrating from.
 
- - If your instructors have configured a server for you to use, ask them for the host name, username and password. It's important to click on the `SSL` tab and active SSL.
- - If you followed the steps to configure PostgreSQL in a docker container, the hostname will be `localhost`, username `postgres` and password `postgres`. 
-
-Click `Test Connection` to ensure your details are correct.
-
-Click `Connect` to proceed to the next step.
+- It's important to click on the `SSL` tab and activate SSL (SSL mode Prefer is fine), otherwise we won't be able to connect to cloud hosted databases.
+- If your instructors have configured a server for you to use, ask them for the host name, username and password. 
+- Database name should be "library"
+- Click `Test Connection` to ensure your details are correct.
+- Click `Connect` to proceed to the next step.
+- You can give your connection a name and a tag to make it simpler to remember later
 
 <Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/60-image-001.png" alt="Screenshot of the connect modal" />
+
+:::info
+🦸‍♂️ If you have followed the steps to configure PostgreSQL in a docker container, the hostname will be `localhost`, username `postgres` and password `postgres`. 
+:::
