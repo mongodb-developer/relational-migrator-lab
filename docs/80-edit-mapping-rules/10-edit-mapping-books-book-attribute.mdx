@@ -1,9 +1,9 @@
 import Screenshot from "@site/src/components/Screenshot";
 
-# 👐 Clean book attributes up  
+# 👐 Clean up book attributes  
 
 
-We want to clean up the book_attributes array in our MongoDB schema. We want an array of objects containing attributes, modelled a key value pairs. something like:
+We want to clean up the bookAttributes array in our MongoDB schema. We want an array of objects containing attributes, modelled as key value pairs. something like:
 
 ```json
 {
@@ -22,15 +22,14 @@ We want to clean up the book_attributes array in our MongoDB schema. We want an 
 }
 ```
 
-- On the MongoDB diagram view, click the `books` collection
+- On the MongoDB diagram view, click on the `books` collection.
 - On the relational mappings list on the right, click on the edit icon of `book_attribute` embedded array mapping rule.
-- Change the Field name from `bookAttributes` to `attributes`
-- Uncheck `bookId`. We just want all the attributes, which are key/value pairs.
-- Click `Save and close`
+- Change the Field name from `bookAttributes` to `attributes`.
+- Uncheck `bookId`. We just want all the attributes, which are key/value pairs. Also, as we're embedded inside books, we don't need the `bookId` anymore.
+- Click `Save and close`.
 
 :::info
 Here we've implemented the [Attribute Pattern](https://www.mongodb.com/developer/products/mongodb/attribute-pattern/) for MongoDB. This will allow for easy indexing, querying based on attributes and extension of attributes. 
 :::
 
-<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/150-image-001.png" alt="Screenshot of the connect modal" />
-
+<Screenshot url="http://127.0.0.1:8278" src="img/150-image-001.png" alt="Changes in the books collection" />

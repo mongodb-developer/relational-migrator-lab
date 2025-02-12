@@ -1,20 +1,19 @@
 import Screenshot from "@site/src/components/Screenshot";
 
-# 🦸 Edit mapping to issueDetails collection (from issue_details table)
+# 🦸 Remove unnecessary ids from operations
 
 :::info
 Extra activity! Do it if you have extra time or are following along at home. It won't be covered during the hands-on lab.
 :::
 
-Now we want to remove some unncessary id fields from the issueDetails collection 
+Now we want to remove some unncessary id fields from the operations collection. We have `bookId` and `userId` but we also have these values in the embedded `book` and `user` fields.
 
-
-- On the MongoDB diagram view, click the `issueDetails` collection
-- On the relational mappings list on the right, click on the edit icon of `issue_details` New Documents mapping rule
+- On the MongoDB diagram view, click the `operations` collection.
+- On the relational mappings list on the right, click on the edit icon of `opperations` New Documents mapping rule.
 - Uncheck the `bookId` and `userId` fields, and leave all other fields checked.
-- Click `Save and close`
+- Click `Save and close`.
 
 
 
-<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/190-image-001.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/190-image-001.png" alt="Changes in the operations collection" />
 
