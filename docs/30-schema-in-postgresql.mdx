@@ -2,7 +2,7 @@ import Screenshot from "@site/src/components/Screenshot";
 
 # 📘 Schema in PostgreSQL
 
-The following screenshot shows an entity-relationship diagram of the relational database we wish to migrate. This is a library management app that stores information about books, where a book can have many authors, an author can write many books, and users can borrow books and leave reviews. You can have many copies of the same book (issue_details) and those are what users borrow and return. A library user can have many addresses.
+The following screenshot shows an entity-relationship diagram of the relational database we wish to migrate. This is a library management app that stores information about books, where a book can have many authors, an author can write many books, and users can borrow books and leave reviews. You can have many copies of the same book and those are what users borrow and return. All this is registered in the `operations` collection. A library user can have many addresses.
 
 This is the sample schema we use during our [Developer Days's Intro Lab](https://mongodb-developer.github.io/intro-lab/docs/importing-data/intro).
 

@@ -1,9 +1,9 @@
 import Screenshot from "@site/src/components/Screenshot";
 
-# 👐 Clean book attributes up  
+# 👐 Clean up book attributes  
 
 
-We want to clean up the book_attributes array in our MongoDB schema. We want an array of objects containing attributes, modelled a key value pairs. something like:
+We want to clean up the bookAttributes array in our MongoDB schema. We want an array of objects containing attributes, modelled as key value pairs. something like:
 
 ```json
 {
@@ -32,4 +32,4 @@ We want to clean up the book_attributes array in our MongoDB schema. We want an 
 Here we've implemented the [Attribute Pattern](https://www.mongodb.com/developer/products/mongodb/attribute-pattern/) for MongoDB. This will allow for easy indexing, querying based on attributes and extension of attributes. 
 :::
 
-<Screenshot url="http://127.0.0.1:8278" src="img/150-image-001.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/150-image-001.png" alt="Changes in the books collection" />
