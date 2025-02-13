@@ -1,0 +1,30 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# 👐 Run a Snapshot Migration Job
+
+- At the top, switch to Data Migration tab
+
+<Screenshot url="http://127.0.0.1:8278" src="img/210-image-001.png" alt="Screenshot of the connect modal" />
+
+- Click create sync job
+- Specify source DB connection details
+  - The details will be populated from when you created the project. 
+
+<Screenshot url="http://127.0.0.1:8278" src="img/210-image-002.png" alt="Screenshot of the connect modal" />
+
+- Specify MongoDB connection details
+  - Enter the URI, database, username and password for your MongoDB cluster
+  - If you are using Atlas, you can retrieve the details from the [Atlas portal](https://cloud.mongodb.com)
+
+<Screenshot url="http://127.0.0.1:8278" src="img/210-image-003.png" alt="Screenshot of the connect modal" />
+
+- Specify migration options 
+  - Choose the `Drop destination collections before migration` option
+
+<Screenshot url="http://127.0.0.1:8278" src="img/210-image-004.png" alt="Screenshot of the connect modal" />
+
+- Read migration summary to confirm details
+- Run Start
+- Monitor the progress of the job
+
+<Screenshot url="http://127.0.0.1:8278" src="img/210-image-005.png" alt="Screenshot of the connect modal" />

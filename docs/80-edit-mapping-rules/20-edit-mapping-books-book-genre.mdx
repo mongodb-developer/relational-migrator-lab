@@ -9,30 +9,34 @@ We'll go from the proposed array of objects:
 ```json
 bookGenres: [
     {
-        bookId: "Some Book Id",
-        genres: "fiction"
+        "bookId": "Some Book Id",
+        "genres": "fiction"
     },
     {
-        bookId: "Some Book Id",
-        genres: "novel"
+        "bookId": "Some Book Id",
+        "genres": "novel"
     }
 ]
 ```
 
-to an array of primitive values
+to an array of
 
 ```json
-genres: [ "fiction", "novel" ]
+genres: [ 
+    { "name": "fiction" }, 
+    { "name" :"novel" } 
+]
 ```
 
-- On the MongoDB diagram view, click the `books` collection
-- On the relational mappings list on the right, click on the edit icon of `book_genre` embedded array
-- Change the field name from `bookGenres` to `genres`
-- Uncheck `bookId`
-- In the advanced settings, check `create array of primitive values`
-- Click `Save and close`
+- On the MongoDB diagram view, click the `books` collection.
+- Click on the edit edit icon of `genres`. Deselect `id`, This is a child relationship of `bookGenres`, and we'll merge these fields into the parent, to avoid too much unneccesary nesting.
+- Click `Save and close`.
+- Click on the edit icon of the `book_genre` embedded array.
+- Change the field name from `bookGenres` to `genres`.
+- Uncheck `bookId` and `genreId`.
+- Click `Save and close`.
 
 
 
-<Screenshot url="https://www.mongodb.com/products/tools/relational-migrator" src="img/160-image-001.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/160-image-001.png" alt="Changes in the books collection" />
 
