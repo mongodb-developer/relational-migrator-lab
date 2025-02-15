@@ -1,0 +1,84 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# 👐 Monitor a Continuous Migration Job
+
+When a continuous migration job has completed its initial synchronization stage, it enters the Change-Data-Capture (CDC) stage.
+In this stage, the source database is monitored for changes, and these changes are applied to the target MongoDB database.
+
+<Screenshot url="http://127.0.0.1:8278" src="img/210-image-012.png" alt="Screenshot of the Data Migration monitoring page" />
+
+To verify changes are being captured correctly, you can make changes to the Postgres library database and check MongoDB for corresponding changes.
+- Using pgAdmin or psql, apply the following updates to the library database in Postgres
+
+```
+GRANT USAGE ON SCHEMA library to replication_group;
+
+INSERT INTO library.authors VALUES (9999, 'Julian May', 'julianmay', 'Born in 1931, Julian May sold her first short story to John W. Campbell''s Astounding Science Fiction magazine in 1951. It was a science fiction short story called Dune Roller. But it wasn''t until the 1980s that the author returned to genre fiction, after writing a variety of non-fiction and children''s books, often under pseudonyms. May then wrote the phenomenally successful Saga of the Exiles, followed by the Galactic Milieu series. The Many-Coloured Land, book one of the Saga of the Exiles, won the Locus Best Novel Award. It was also shortlisted for top genre awards including the Hugo, the Nebula, the Prometheus Award and the Mythopoetic Fantasy Award for Adult Literature. Julian May passed away in October 2017.', NULL);
+
+INSERT INTO library.books VALUES ('1447224051', 'Jack the Bodiless', 398, 1991, 'His powers may be the ultimate hope, if they allow him to live.', '', 2, 2, 'Jack the Bodiless', NULL, NULL, 132, 19, 1);
+INSERT INTO library.books VALUES ('144722406X', 'Diamond Mask', 402, 1994, 'She concealed her great gifts, but some plans were made to be broken.', '', 2, 2, 'Diamond Mask', NULL, NULL, 132, 19, 1);
+INSERT INTO library.books VALUES ('1447224078', 'Magnificat', 434, 1996, 'A glorious future is in sight, until the rebellion brings Armageddon.', '', 2, 2, 'Magnificat', NULL, NULL, 132, 19, 1);
+
+INSERT INTO library.book_genre VALUES ('1447224051', 803);
+INSERT INTO library.book_genre VALUES ('144722406X', 803);
+INSERT INTO library.book_genre VALUES ('1447224078', 803);
+
+INSERT INTO library.author_book VALUES (9999, '1447224051');
+INSERT INTO library.author_book VALUES (9999, '144722406X');
+INSERT INTO library.author_book VALUES (9999, '1447224078');
+```
+
+:::info
+If you need to install pgAdmin, it can be downloaded from [here](https://www.pgadmin.org/download/)
+:::
+
+:::info
+If you are taking part in an instructor led lab, you should prefix the book IDs `1447224051`, `144722406X`, and `1447224078` with a unique combination of characters (try your initials), and add a random value to the author ID `9999`, to avoid duplicate key errors with your classmates.
+:::
+
+If continuous migration is operating correctly, you should see an update to the `Total events seen` and `Events in the last hour` counts in Relational Migrator.
+
+<Screenshot url="http://127.0.0.1:8278" src="img/210-image-013.png" alt="Screenshot of the Data Migration monitoring page" />
+
+Now check for the new books in MongoDB:
+
+  - In Compass, run a search against the books collection for a books we added to Postgres: `{_id: /^14472240/}`
+  - If the CDC process worked correctly, you should see three book documents being returned
+
+![Screenshot of MongoDB Compass](/img/210-image-014.png)
+
+:::info
+If you are taking part in an instructor led lab, modify the query to include the unique combination of characters you added to the book IDs when adding them to Postgres.
+:::
+
+:::info
+Note the documents added to MongoDB with a continuous migration will include some of the fields we exluded when editing the mapping rules - specifically ID fields defined in primary key / foreign key constraints in Postgres. Relational Migrator relies on these fields to be able to accurately identify documents in MongoDB when applying updates.
+:::
+
+Now try deleting the records we just added from Postgres:
+
+```
+DELETE FROM library.author_book WHERE  author_id = 9999;
+DELETE FROM library.book_genre WHERE book_id LIKE '14472240%';
+DELETE FROM library.books WHERE id LIKE '14472240%';
+DELETE FROM library.authors WHERE id = 9999;
+```
+
+:::info
+If you are taking part in an instructor led lab, modify the `author_id` and `book_id` values to match those you used when inserting the data.
+:::
+
+Check for updates to the `Total events seen` and `Events in the last hour` counts in Relational Migrator.
+
+Verify the books have been deleted in MongoDB:
+
+  - In Compass, run the same search against the books collection: `{_id: /^14472240/}`
+  - If the CDC process worked correctly, the query should not find any matching books
+
+![Screenshot of MongoDB Compass](/img/210-image-015.png)  
+
+Click the `Complete CDC` button on the the Relational Migrator Data Migration tab to end the CDC job.
+
+:::info
+If you close your Relational Migrator browser tab without clicking `Complete CDC`, the CDC migration will continue to run in the background. You can end the job by either ruturning to the Relational Migrator UI, opening the project and clicking `Complete CDC` on the data migration tab, or by exiting Relational Migrator.
+:::
