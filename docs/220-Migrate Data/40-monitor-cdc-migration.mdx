@@ -52,7 +52,7 @@ If you are taking part in an instructor led lab, modify the query to include the
 :::
 
 :::info
-Note the documents added to MongoDB with a continuous migration will include some of the fields we exluded when editing the mapping rules - specifically ID fields defined in primary key / foreign key constraints in Postgres. Relational Migrator relies on these fields to be able to accurately identify documents in MongoDB when applying updates.
+Note the documents added to MongoDB with a continuous migration will include some of the fields we exluded when editing the mapping rules - specifically ID fields defined in primary key / foreign key constraints in Postgres. Relational Migrator relies on these fields to be able to accurately identify documents in MongoDB when applying updates. Look at the entries in the `genres` array in a book document as an example.
 :::
 
 Now try deleting the records we just added from Postgres:
