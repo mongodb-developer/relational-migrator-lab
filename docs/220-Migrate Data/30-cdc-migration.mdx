@@ -8,32 +8,32 @@ Change Data Capture synchronization will continue until you explicitly complete 
 
 To start a continuous migration job, switch to the `Data Migration` tab:
 
-<Screenshot url="http://127.0.0.1:8278" src="img/210-image-006.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/220-image-006.png" alt="Screenshot of the connect modal" />
 
 - Click `Create migration job`
 - Specify the source DB connection details
   - If you previously saved your connection details, you will be able to select those without needing to re-enter any details 
 
-<Screenshot url="http://127.0.0.1:8278" src="img/210-image-007.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/220-image-007.png" alt="Screenshot of the connect modal" />
 
 - Specify MongoDB connection details
   - Enter the URI, database, username and password for your MongoDB cluster
   - If you are using Atlas, you can retrieve the details from the [Atlas portal](https://cloud.mongodb.com)
   - If you saved your MongoDB connection details during a previous migration, you will be able to select those without needing to re-enter any details 
 
-<Screenshot url="http://127.0.0.1:8278" src="img/210-image-008.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/220-image-008.png" alt="Screenshot of the connect modal" />
 
 - Specify migration options
   - Set Mode to `Continous` 
   - Choose the `Drop destination collections before migration` option
 
-<Screenshot url="http://127.0.0.1:8278" src="img/210-image-009.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/220-image-009.png" alt="Screenshot of the connect modal" />
 
 - If you get a message warning you the source database is not configured for continous migration jobs
   - Click the `Generate Script` button to generate and download the SQL script to configure the database
   - Use pgAdmin or psql to run the script against the library database
 
-<Screenshot url="http://127.0.0.1:8278" src="img/210-image-010.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/220-image-010.png" alt="Screenshot of the connect modal" />
 
 :::info
 In an intructor-led lab, the provisioned PostgreSQL database will already be configured for continous migration.
@@ -47,4 +47,4 @@ If you need to install pgAdmin, it can be downloaded from [here](https://www.pga
 - If everything looks good, click `Start`
 - Monitor the progress of the job
 
-<Screenshot url="http://127.0.0.1:8278" src="img/210-image-011.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/220-image-011.png" alt="Screenshot of the connect modal" />

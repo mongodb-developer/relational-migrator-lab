@@ -1,11 +1,13 @@
 import Screenshot from "@site/src/components/Screenshot";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # 👐 Monitor a Continuous Migration Job
 
 When a continuous migration job has completed its initial synchronization stage, it enters the Change-Data-Capture (CDC) stage.
 In this stage, the source database is monitored for changes, and these changes are applied to the target MongoDB database.
 
-<Screenshot url="http://127.0.0.1:8278" src="img/210-image-012.png" alt="Screenshot of the Data Migration monitoring page" />
+<Screenshot url="http://127.0.0.1:8278" src="img/220-image-012.png" alt="Screenshot of the Data Migration monitoring page" />
 
 To verify changes are being captured correctly, you can make changes to the Postgres library database and check MongoDB for corresponding changes.
 - Using pgAdmin or psql, apply the following updates to the library database in Postgres
@@ -38,14 +40,35 @@ If you are taking part in an instructor led lab, you should prefix the book IDs 
 
 If continuous migration is operating correctly, you should see an update to the `Total events seen` and `Events in the last hour` counts in Relational Migrator.
 
-<Screenshot url="http://127.0.0.1:8278" src="img/210-image-013.png" alt="Screenshot of the Data Migration monitoring page" />
+<Screenshot url="http://127.0.0.1:8278" src="img/220-image-013.png" alt="Screenshot of the Data Migration monitoring page" />
 
 Now check for the new books in MongoDB:
 
-  - In Compass, run a search against the books collection for a books we added to Postgres: `{_id: /^14472240/}`
+<Tabs groupId="MongoDB Interfaces Documents Added">
+  <TabItem value="Atlas UI" label="Atlas UI">
+
+  - In a web browser, navigate to the [MongoDB Atlas portal](https://cloud.mongodb.com) and sign in with your account
+  - Navigate to the cloud project containing the cluster you migrated data to
+  - Select your cluster and click `View collections`
+  - Select the `books` collection in the database you migrated data to
+  - Enter a query in the Filter text box that uses a regular expression to look for any book where the _id value starts with the common prefix of the books we added: `{_id: /^14472240/}`
+  - Click `Apply`
   - If the CDC process worked correctly, you should see three book documents being returned
 
-![Screenshot of MongoDB Compass](/img/210-image-014.png)
+<Screenshot url="http://cloud.mongodb.com" src="/img/220-image-016.png" alt="Screenshot of the Atlas UI" />
+
+  </TabItem>
+  <TabItem value="Compass" label="Compass">
+
+  - In Compass, select the `books` collection in the `CONNECTIONS` navigation panel on the left hand side.
+  - Enter a query that uses a regular expression to look for any book where the _id value starts with the common prefix of the books we added: `{_id: /^14472240/}`
+  - Click `Find`
+  - If the CDC process worked correctly, you should see three book documents being returned
+
+![Screenshot of MongoDB Compass](/img/220-image-014.png)
+
+  </TabItem>
+</Tabs>
 
 :::info
 If you are taking part in an instructor led lab, modify the query to include the unique combination of characters you added to the book IDs when adding them to Postgres.
@@ -72,10 +95,24 @@ Check for updates to the `Total events seen` and `Events in the last hour` count
 
 Verify the books have been deleted in MongoDB:
 
+<Tabs groupId="MongoDB Interfaces Documents Removed">
+  <TabItem value="Atlas UI" label="Atlas UI">
+
+  - In the Atlas UI, run the same search against the books collection: `{_id: /^14472240/}`
+  - If the CDC process worked correctly, the query should not find any matching books
+
+<Screenshot url="http://cloud.mongodb.com" src="/img/220-image-017.png" alt="Screenshot of the Atlas UI" />
+
+  </TabItem>
+  <TabItem value="Compass" label="Compass">
+
   - In Compass, run the same search against the books collection: `{_id: /^14472240/}`
   - If the CDC process worked correctly, the query should not find any matching books
 
-![Screenshot of MongoDB Compass](/img/210-image-015.png)  
+![Screenshot of MongoDB Compass](/img/220-image-015.png)  
+
+  </TabItem>
+</Tabs>
 
 Click the `Complete CDC` button on the the Relational Migrator Data Migration tab to end the CDC job.
 
