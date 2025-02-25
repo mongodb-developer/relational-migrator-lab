@@ -10,7 +10,10 @@ in your choice of programming langauge. This feature uses Artifical Intelligence
 - Sign into your MongoDB Atlas account
 - Accept the Query Converter licence terms
 - Click `Paste SQL query`
-- In the empty query, type `SELECT * FROM books WHERE "bookOfTheMonth" = true AND pages > 500` 
+- In the empty query, type 
+```sql
+SELECT * FROM library.books WHERE "bookOfTheMonth" = true AND pages > 500
+```
 - Leave the language as JavaScript and click Convert. 
 
 After a while, the equivalent MongoDB query will be shown at the right of the page. 
