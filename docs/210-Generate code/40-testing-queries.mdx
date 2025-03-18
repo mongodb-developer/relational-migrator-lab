@@ -35,20 +35,13 @@ Relation Migrator allows you to go a step further, and verify the converted quer
     <Screenshot url="http://127.0.0.1:8278" src="img/testing-queries-005.png" alt="Screenshot to show result comparison" />
 5. If the query results are different, check your MongoDB query. In this example, your MongoDB query should look like:
     ```js
-        async function get_books_by_genre(db, genre_param) {
-        const result = await db.collection('books').aggregate([
-            {
-                $match: {
-                    'genre': genre_param
-                }
-            },
-            {
-                $project: {
-                    title: 1
-                }
-            }
-        ]).toArray();
-            return result;
+        async function library_get_books_by_genre(db, genre_param) {
+            const books = await db.collection('books').aggregate([
+                { $match: { 'genres.name': genre_param } },
+                { $project: { title: 1 }}
+            ]).toArray();
+            
+            return books.map(book => ({ title: book.title }));
         }
     ```
     Also check that any changes your made to your MongoDB query are saved.
