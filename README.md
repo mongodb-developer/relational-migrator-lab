@@ -1,3 +1,5 @@
+[![.github/workflows/deploy.yml](https://github.com/mongodb-developer/relational-migrator-lab/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/mongodb-developer/relational-migrator-lab/actions/workflows/deploy.yml)
+
 # Developer Days Relational Migrator Lab
 
 This is the Relational Migrator Lab used during Developer Days that covers using the Relational Migrator to import a PostgreSQL Database into MongoDB. 
