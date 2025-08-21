@@ -1,0 +1,48 @@
+import Screenshot from "@site/src/components/Screenshot";
+
+# 👐 Pre migration analysis
+
+:::info
+This feature is in Preview at this moment, so features / UI could change. Also, review the results as they could be improved in the future.
+:::
+
+Get a detailed risk assessment and tailored recommendations to migrate your application successfully.
+
+## Generate the report
+
+We can generate a report of the schema we are about to migrate. This is useful to understand the structure of the data and how it will be represented in MongoDB.
+
+- To do that, click on the `Pre-Migration Analysis` tab.
+- Then click on `Run analysis`.
+
+<Screenshot url="http://127.0.0.1:8278" src="img/65-pre-migration-001.png" alt="Pre-migration analysis selected" />
+
+## Review the Summary
+
+You'll see a summary of the analysis, which includes:
+- The _Predicted migration readiness level_, that will give you a rough idea of how ready your schema is for migration.
+- The number of tables, stored procedures, triggers and views in the relational schema.
+- The size of the database.
+
+## Review the Database
+
+If you click in `Database`, you can see all detected risks in the `Impact analysis` tab. 
+
+From there, you can review the Tables in detail, including number of rows, columns, types, etc.
+
+<Screenshot url="http://127.0.0.1:8278" src="img/65-pre-migration-002.png" alt="Pre-migration analysis selected" />
+
+You can also check the Stored procedures, Trriggers and Views and even review the SQL code.
+
+<Screenshot url="http://127.0.0.1:8278" src="img/65-pre-migration-003.png" alt="Pre-migration analysis selected" />
+
+## Migration Prerequisites
+
+In the `Migration prerequisites` tab, you can the prerequisites for the migration. In this case, we see that `Postgres Write-Ahead Logging (WAL) logical replication must be enabled in Postgres before running a Continuous migration job.`
+
+<Screenshot url="http://127.0.0.1:8278" src="img/65-pre-migration-004.png" alt="Pre-migration analysis selected" />
+
+
+## Resources
+
+More information and documentation to help you plan your migration. 
