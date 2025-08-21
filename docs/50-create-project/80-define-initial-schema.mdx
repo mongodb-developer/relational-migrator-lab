@@ -2,13 +2,19 @@ import Screenshot from "@site/src/components/Screenshot";
 
 # 👐 Define the Initial Schema
 
-Relational Migrator gives you three options on how your MongoDB schema should be created. Regardless of which option you choose, you can manually modify your schema later. 
+Relational Migrator gives you three options on how your initial MongoDB schema will be created. Regardless of which option you choose, you can manually modify your schema later. 
+
+| Option      | What it does     | 
+| :------------- | :---------- | 
+| Start with a MongoDB schema that matches your relational schema | Maps each table exactly to one collection, including link tables (for 1:n relationships). We're just replicating the existing schema, which won't take advantage of the Document Model.  | 
+| Start with a recommended MongoDB schema   | Will try to understand your schema and embed 1:n relationships. | 
+| Start with an empty MongoDB schema   | Your MongoDB schema will be empty. You'll create all the mappings yourself. | 
 
 Select `Start with a recommended MongoDB schema`
 
-You are asked which tables should represented as a collection in MongoDB. 
+You can see which tables will be mapped to a collection in MongoDB: those marked as `TOP-LEVEL`.
 
-Select the following six collections as they are the main entities in our schema:
+Select the following six collections as `TOP-LEVEL` since they are the main entities in our schema:
 
 - authors
 - books
@@ -19,7 +25,7 @@ Select the following six collections as they are the main entities in our schema
 
 Any tables you did not check will be embedded in other collections. 
 
-<Screenshot url="http://127.0.0.1:8278" src="img/80-image-001.png" alt="Screenshot of the connect modal" />
+<Screenshot url="http://127.0.0.1:8278" src="img/80-image-001.png" alt="Defining the initial schema" />
 
 Select the casing you'd like for your collections - the default is camelCase.
 

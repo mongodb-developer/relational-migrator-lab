@@ -1,14 +1,30 @@
 import Screenshot from "@site/src/components/Screenshot";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # 👐 Creating a New Project
 
-Ensure the Relational Migrator is installed and running (in your codespace or locally at http://127.0.0.1:8278/).
+Ensure the Relational Migrator is installed and running (either in your codespace or locally at http://127.0.0.1:8278/).
 
+## Create a New Project
 
-## Click on New Project
+<Tabs groupId="Create a New Project">
+  <TabItem value="FirstTime" label="First Time using Relational Migrator">
 
+    If you're running the Relational Migrator for the first time, you will see a welcome screen. We will `Start from scratch` and click on `Connect database`.
 
-<Screenshot url="http://127.0.0.1:8278" src="img/50-image-001.png" alt="Screenshot of the connect modal" />
+    <Screenshot url="http://127.0.0.1:8278" src="img/50-image-000.png" alt="Create a New Project clicking on Connect database" />
+
+  
+  </TabItem>
+  <TabItem value="AlreadyUsed" label="I already have a project!">
+
+    Click on the `New Project` button in the top right corner of the Relational Migrator UI.
+
+    <Screenshot url="http://127.0.0.1:8278" src="img/50-image-001.png" alt="Create a New Project clicking on New Project" />
+  
+  </TabItem>
+</Tabs>
 
 ## Select one of the three options
 - 👐 Click **Connect database** under "Connect to live database" if you are running the source database in the cloud, Docker or using your own hardware. This is what we will use during an instructor-led hands-on lab.
