@@ -2,6 +2,6 @@
     "label": "👐 Create a Project",
     "link": {
         "type": "generated-index",
-        "description": "Create your Project in Relational Migrator."
+        "description": "Create your Project in the MongoDB Relational Migrator and start with an initial schema."
     }
 }
