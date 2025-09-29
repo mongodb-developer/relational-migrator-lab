@@ -66,7 +66,7 @@ const footerLinks = [
     href: `https://learn.mongodb.com?${utmParams}`,
   },
   {
-    href: `https://github.com?${organizationName}/${workshopName}`,
+    href: `https://github.com/${organizationName}/${workshopName}`,
     label: "This lab in GitHub",
   },
 ];
