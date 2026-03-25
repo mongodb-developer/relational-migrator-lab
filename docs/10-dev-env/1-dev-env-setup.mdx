@@ -1,8 +1,34 @@
 import Screenshot from "@site/src/components/Screenshot";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-# 👐 Setup
+# 👐 Quick Start
 
-## GitHub Codespaces
+
+<Tabs groupId="setup options">
+<TabItem value="Instruqt" label="Instruqt">
+
+Instruqt is a lab platform that provides cloud-based sandboxes which come pre-configured with all the tools you need to run this lab.
+
+Navigate to the Instruqt lab using [this link](http://mdb.link/instruqt-rm).
+
+Fill out the form that appears and click **Submit and access**.
+
+<Screenshot url="https://play.instruqt.com" src="img/10-dev-env/2-submit-form.png" alt="Submit Instruqt form" />
+
+Click **Start** to launch the lab environment.
+
+<Screenshot url="https://play.instruqt.com" src="img/10-dev-env/3-start-sandbox-setup.png" alt="Start Instruqt sandbox" />
+
+You should see a screen with a purple progress bar indicating that Instruqt is preparing a sandbox with all the required libraries for this lab and a MongoDB cluster.
+
+Once this is done, you should see a **Start** button at the bottom right of the screen. Click this to enter the lab.
+
+<Screenshot url="https://play.instruqt.com" src="img/10-dev-env/4-start-lab.png" alt="Start Instruqt lab" />
+
+</TabItem>
+
+<TabItem value="GitHub Codespaces" label="GitHub Codespaces">
 
 You will be working in GitHub Codespaces throughout this lab. A codespace is a cloud-hosted, containerized development environment that comes pre-configured with all the tools you need to run this lab.
 
@@ -14,16 +40,20 @@ Let it run for a few minutes as it prepares a Docker container with all the requ
 
 **That's it! You're ready for the lab!**
 
-:::caution
- During the lab, we will use GitHub Codespaces. The following instructions are here just in case you can't use Codespaces or if you really, really, really want a local installation.
-:::
 
+</TabItem>
+
+</Tabs>
+
+:::caution
+ During the lab, we will use Instruqt or GitHub Codespaces. The following instructions are here just in case you can't use either or if you really, really, really want a local installation.
+:::
 
 <details>
   <summary>🦹 __Run this lab locally__</summary>
 
   :::info
-  Again: during the lab, we will use GitHub Codespaces. The following instructions are here just in case you can't use Codespaces or if you really, really, really want to try a local installation.
+  Again: during the lab, we will use Instruqt or GitHub Codespaces. The following instructions are here just in case you can't use Instruqt or Codespaces or if you really, really, really want to try a local installation.
   :::
 
   #
